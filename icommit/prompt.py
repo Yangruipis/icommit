@@ -6,6 +6,7 @@
 
 
 from dataclasses import dataclass
+from typing import List
 
 
 @dataclass
@@ -18,10 +19,11 @@ class Prompt:
     max_char_set: bool = False
 
 
-PROMPT_SET = [
-    Prompt(
-        summarize="Write an insightful, succinct but concise Git commit message in a complete sentence in present tense for the following diff without prefacing it with anything, you'd better start it with an appropriate emoji according to your message",
-        classify="""The following code diff can be classified to 8 types:
+def new_prompt_set() -> List[Prompt]:
+    return [
+        Prompt(
+            summarize="Write an insightful, succinct but concise Git commit message in a complete sentence in present tense for the following diff without prefacing it with anything, you'd better start it with an appropriate emoji according to your message",
+            classify="""The following code diff can be classified to 8 types:
 1. feat: A new feature, such as the add or remove of functions/classes
 2. fix: A bug fix, some typo fixes or small logic fixes
 3. docs: Documentation only changes, including files like *.md *.adoc *.org, etc.
@@ -31,9 +33,9 @@ PROMPT_SET = [
 7. test: Adding missing or correcting existing tests, must including filenames start or end with 'test'
 8. chore: Changes to the build process or auxiliary tools and libraries such as documentation generation, dockerfile, gitlab ci, github workflow, etc.
 
-please return the best type according to the diff, you must give me **one** word only""",
-    ),
-]
+please return the best type according to the code diff summary, you must give me **one** word only""",
+        ),
+    ]
 
 
 def with_locale(prompt: Prompt, locale: str = 'en'):
@@ -57,5 +59,9 @@ def with_diff(prompt: Prompt, diff: str):
         return prompt
 
     prompt.summarize += f'\n\n{diff}'
-    prompt.classify += f'\n\n{diff}'
+    return prompt
+
+
+def with_summary(prompt: Prompt, s: str):
+    prompt.classify += f'\n\n{s}'
     return prompt
