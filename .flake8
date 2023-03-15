@@ -1,0 +1,14 @@
+[flake8]
+extend-ignore =
+    # E203 whitespace before ':'
+    E203,
+    ; # N806 variable in function should be lowercase
+    ; N806,
+    ; # N812 lowercase imported as non lowercase
+    ; N812,
+    ; # N802 function name should be lowercase
+    ; N802,
+    ; # N803 argument name should be lowercase
+    ; N803,
+max-line-length = 100
+exclude = .svn,CVS,.bzr,.hg,.git
