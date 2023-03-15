@@ -17,7 +17,7 @@
 * Install
 
 #+BEGIN_SRC
-pip install icommit
+pip install git+https://github.com/Yangruipis/icommit.git@master
 #+END_SRC
 
 * QUICK START
