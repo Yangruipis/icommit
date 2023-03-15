@@ -1,0 +1,37 @@
+#+LATEX_HEADER: \newenvironment{lequation}{\begin{equation}\Large}{\end{equation}}
+#+OPTIONS: ^:nil
+#+ATTR_LATEX: :width 5cm :options angle=90
+#+TITLE: icommit
+#+AUTHOR: 杨 睿
+#+EMAIL: yangruipis@163.com
+#+KEYWORDS: 
+#+OPTIONS: H:4 toc:t
+#+OPTIONS: tex:t
+#+SETUPFILE: https://gitee.com/yangruigit/my_blogs/raw/master/lib/theme-readtheorg.setup
+#+HTML_HEAD: <style>pre.src{background:#343131;color:white;} </style>
+#+html: <div align="right">
+#+html: <a href="javascript:history.back()">返回</a>
+#+html: </div>
+
+
+* Install
+
+#+BEGIN_SRC
+pip install icommit
+#+END_SRC
+
+* QUICK START
+
+** set key and proxy(optional)
+
+#+BEGIN_SRC
+icommit set --key ${YOUR OPENAI API KEY} --proxy ${YOUR PROXY}
+icommit get
+#+END_SRC
+
+** auto gen commit message
+
+#+BEGIN_SRC
+icommit run
+icommit run --locale zh
+#+END_SRC

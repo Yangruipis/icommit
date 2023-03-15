@@ -20,7 +20,7 @@ class Prompt:
 
 PROMPT_SET = [
     Prompt(
-        summarize='Write an insightful, succinct but concise Git commit message in a complete sentence in present tense for the following diff without prefacing it with anything',
+        summarize="Write an insightful, succinct but concise Git commit message in a complete sentence in present tense for the following diff without prefacing it with anything, you'd better start it with an appropriate emoji according to your message",
         classify="""The following code diff can be classified to 8 types:
 1. feat: A new feature, such as the add or remove of functions/classes
 2. fix: A bug fix, some typo fixes or small logic fixes
@@ -31,7 +31,7 @@ PROMPT_SET = [
 7. test: Adding missing or correcting existing tests, must including filenames start or end with 'test'
 8. chore: Changes to the build process or auxiliary tools and libraries such as documentation generation, dockerfile, gitlab ci, github workflow, etc.
 
-please return the best type id according to the diff""",
+please return the best type according to the diff, you must give me **one** word only""",
     ),
 ]
 

@@ -109,7 +109,7 @@ def run(locale: str = typer.Option('en')):
             else:
                 new_message_type = message_type
 
-            if new_message_type in MESSAGE_TYPES:
+            if len(new_message_type.split(" ")) == 1:
                 message = f'{new_message_type}: {message}'
 
             print(f'commit message: \n\n\t\t{message}\n')
